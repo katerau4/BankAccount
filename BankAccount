@@ -1,0 +1,40 @@
+global balance
+def Welcome():
+  accountNum= int(input("Account Number: "))
+  pin= int(input("PIN: "))
+  print("Your account number: "+ str(accountNum)+ "\nYour pin: "+ str(pin))
+  
+""" count = 0
+  while accountNum != 0:
+    accountNum //= 10
+    count += 1
+  if count != 6:
+    print("Invalid")
+    exit()
+  else:
+   print("Your account number: "+ str(accountNum)+ "\nYour pin: "+ str(pin))"""
+
+def Deposit(balance):
+    amount = int(input("How much would you like to deposit? "))
+    balance = balance + amount
+    print(balance)
+
+def Withdraw(balance):
+    amount = int(input("How much would you like to withdraw? "))
+    if amount < balance:
+     balance = balance - amount
+     print(balance)
+    else:
+      print("Sorry, you do not have enough money to withdraw.")
+  
+
+Welcome()
+
+balance =int(input("Your current balance: "))
+choice = input("Would you like to deposit or withdraw today? d or w: ")
+if choice == 'd':
+  Deposit(balance)
+if choice == 'w':
+  Withdraw(balance)
+else: 
+  print("Invalid!!")
